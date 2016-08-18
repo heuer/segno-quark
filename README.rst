@@ -107,13 +107,46 @@ Example:
 
     >>> import segno
     >>> qr = segno.make_qr('Ob-La-Di, Ob-La-Da')
-    >>> qr.to_glow('obladioblada.svg', scale=5)
+    >>> qr.to_glow('obladioblada.svg', scale=10, color='darkblue')
 
 
 Result:
 
 .. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/images/glow.png
     :alt: Example of to_glow result
+    :width: 330
+    :height: 330
+
+
+Blur
+^^^^
+
+Creates a QR Code with a "blur" effect.
+
+Usage: ``to_blur``
+
+===============     ============================================================
+Keyword             Description
+===============     ============================================================
+filter_id           Indicates the id of the filter, default: ``segno-blur``
+deviation           Indicates the standard deviation for the blur operation,
+                    default: ``.3``
+===============     ============================================================
+
+
+Example:
+
+.. code-block:: python
+
+    >>> import segno
+    >>> qr = segno.make_qr('Ob-La-Di, Ob-La-Da')
+    >>> qr.to_blur('obladioblada.svg', scale=10, color='darkred')
+
+
+Result:
+
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/images/blur.png
+    :alt: Example of to_blur result
     :width: 330
     :height: 330
 
