@@ -19,14 +19,8 @@ Use ``pip`` to install this quark from PyPI::
 Usage
 -----
 
-One installed, the quark is automatically detected by `Segno`_.
-
-.. code-block:: python
-
-    >>> import segno
-    >>> qr = segno.make_qr('Ob-La-Di, Ob-La-Da')
-    >>> qr.to_pacman('obladioblada.svg', ghosts=7)
-
+One installed, the quark is automatically detected as `Segno`_ plugin and
+therefore available via ``qrcode.to_XXX(...)``.
 
 
 Available converters
@@ -66,11 +60,29 @@ ghosts              Number of ghosts, default: ``5``. If set to ``0``, no ghost
                     infinite loop iff number of ghosts > number of available
                     dark modules. Additionally, the QR Code may not be readable
                     by common QR Code decoders.
+                    The positions of the ghosts are choosen at random.
 ghost_colors        A tuple of colors which the ghosts may get. Default:
                     ``('#ff0c13', '#f2aeaf', '#1bb1e6', '#f97e16')``
                     Not all colors may be used, the colors for the ghosts are
-                    choosen randomly.
+                    choosen at random.
 ===============     ============================================================
+
+
+Example:
+
+.. code-block:: python
+
+    >>> import segno
+    >>> qr = segno.make_qr('Ob-La-Di, Ob-La-Da')
+    >>> qr.to_pacman('obladioblada.svg', scale=10, ghosts=7)
+
+
+Result:
+
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/imgs/pacman.svg
+    :alt: HTTPie compared to cURL
+    :width: 495
+    :height: 495
 
 
 
