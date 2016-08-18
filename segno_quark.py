@@ -25,7 +25,7 @@ except NameError:  # pragma: no-cover
     pass
 from segno import encoder, colors
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 _SVG_NS = 'http://www.w3.org/2000/svg'
 _XLINK_NS = 'http://www.w3.org/1999/xlink'
