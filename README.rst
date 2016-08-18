@@ -29,4 +29,47 @@ One installed, the quark is automatically detected by `Segno`_.
 
 
 
+Available converters
+--------------------
+
+All converters use the same keyword parameters as Segno's SVG serializer,
+see :py:method:`segno.QRCode.save()` for details.
+
+
+ETree
+^^^^^
+
+Creates a SVG QR Code and returns the SVG document as
+:py:class:`xml.etree.ElementTree`
+
+Usage: ``to_etree``
+
+This converter provides no additional keyword arguments.
+
+
+
+Pacman
+^^^^^^
+
+Creates a QR Code with a smiley (and optional ghosts).
+
+Usage: ``to_pacman``
+
+===============     ============================================================
+Keyword             Description
+===============     ============================================================
+pacman_color        Color of the smiley, default: ``#fc0``
+dot_color           Color of the dots which the smiley should eat, default:
+                    ``#fc0``
+ghosts              Number of ghosts, default: ``5``. If set to ``0``, no ghost
+                    appears. Note: Setting this a very high value may result
+                    caus an infinite loop.
+ghost_colors        A tuple of colors which the ghosts may get. Default:
+                    ``('#ff0c13', '#f2aeaf', '#1bb1e6', '#f97e16')``
+                    Not all colors may be used, the colors for the ghosts are
+                    choosen randomly.
+===============     ============================================================
+
+
+
 .. _Segno: https://github.com/heuer/segno
