@@ -79,8 +79,7 @@ Example:
 
 Result:
 
-.. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/imgs/pacman.svg
-    :alt: HTTPie compared to cURL
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/develop/imgs/pacman.svg
     :width: 495
     :height: 495
 
