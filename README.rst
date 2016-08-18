@@ -62,8 +62,10 @@ pacman_color        Color of the smiley, default: ``#fc0``
 dot_color           Color of the dots which the smiley should eat, default:
                     ``#fc0``
 ghosts              Number of ghosts, default: ``5``. If set to ``0``, no ghost
-                    appears. Note: Setting this a very high value may result
-                    caus an infinite loop.
+                    appears. Note: Setting this a very high value may cause an
+                    infinite loop iff number of ghosts > number of available
+                    dark modules. Additionally, the QR Code may not be readable
+                    by common QR Code decoders.
 ghost_colors        A tuple of colors which the ghosts may get. Default:
                     ``('#ff0c13', '#f2aeaf', '#1bb1e6', '#f97e16')``
                     Not all colors may be used, the colors for the ghosts are
