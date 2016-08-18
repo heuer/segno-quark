@@ -13,7 +13,7 @@ Installation
 
 Use ``pip`` to install this quark from PyPI::
 
-    $ pip install segno
+    $ pip install segno-quark
 
 
 Usage
