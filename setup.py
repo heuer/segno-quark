@@ -47,6 +47,8 @@ setup(
     entry_points="""
     [segno.plugin.converter]
     etree = segno_quark:as_etree
+    blur = segno_quark:write_blur
+    glow = segno_quark:write_glow
     pacman = segno_quark:write_pacman
     """,
     install_requires=['segno'],
