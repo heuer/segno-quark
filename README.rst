@@ -1,5 +1,5 @@
-Segno Quark: Plugin for creating more advanced (or less usefull) SVG documents
-==============================================================================
+Segno Quark: Plugin for creating more advanced (or less usefull) QR Code SVG documents
+======================================================================================
 
 This (experimental) `Segno`_ plugin changes the default SVG output in
 different ways (i.e. applying SVG filters).
