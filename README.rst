@@ -19,7 +19,7 @@ Use ``pip`` to install this quark from PyPI::
 Usage
 -----
 
-One installed, the quark is automatically detected as `Segno`_ plugin and
+Once installed, the quark is automatically detected as `Segno`_ plugin and
 therefore available via ``qrcode.to_XXX(...)``.
 
 
