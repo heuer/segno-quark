@@ -79,7 +79,7 @@ Example:
 
 Result:
 
-.. image:: https://raw.githubusercontent.com/heuer/segno-quark/develop/imgs/pacman.svg
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/develop/imgs/pacman.png
     :width: 495
     :height: 495
 
