@@ -27,14 +27,13 @@ Available converters
 --------------------
 
 All converters use the same keyword parameters as Segno's SVG serializer,
-see :py:method:`segno.QRCode.save()` for details.
+see `segno.QRCode.save()`_ for details.
 
 
 ETree
 ^^^^^
 
-Creates a SVG QR Code and returns the SVG document as
-:py:class:`xml.etree.ElementTree`
+Creates a SVG QR Code and returns the SVG document as ``xml.etree.ElementTree``.
 
 Usage: ``to_etree``
 
@@ -79,10 +78,45 @@ Example:
 
 Result:
 
-.. image:: https://raw.githubusercontent.com/heuer/segno-quark/develop/imgs/pacman.png
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/images/pacman.png
+    :alt: Example of to_pacman result
     :width: 495
     :height: 495
 
 
 
+Glow
+^^^^
+
+Creates a QR Code with a "glow" effect.
+
+Usage: ``to_glow``
+
+===============     ============================================================
+Keyword             Description
+===============     ============================================================
+filter_id           Indicates the id of the filter, default: ``segno-glow``
+deviation           Indicates the standard deviation for the blur operation,
+                    default: ``.6``
+===============     ============================================================
+
+
+Example:
+
+.. code-block:: python
+
+    >>> import segno
+    >>> qr = segno.make_qr('Ob-La-Di, Ob-La-Da')
+    >>> qr.to_glow('obladioblada.svg', scale=5)
+
+
+Result:
+
+.. image:: https://raw.githubusercontent.com/heuer/segno-quark/master/images/glow.png
+    :alt: Example of to_glow result
+    :width: 330
+    :height: 330
+
+
 .. _Segno: https://github.com/heuer/segno
+.. _segno.QRCode.save(): https://segno.readthedocs.io/en/latest/api.html#segno.QRCode.save
