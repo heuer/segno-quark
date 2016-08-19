@@ -32,6 +32,12 @@ def _find_svg_el(root, name):
     return root.find('{{{0}}}{1}'.format(_SVG_NS, name))
 
 
+def _find_el_by_id(parent_el, id):
+    res = [el for el in parent_el if el.attrib.get('id') == id]
+    assert len(res) in (0, 1)
+    return res[0] if res else None
+
+
 def test_to_etree():
     qr = segno.make_qr('Segno')
     tree = qr.to_etree(scale=10, border=0, color='red')
@@ -56,8 +62,8 @@ def test_to_pacman_zero_ghosts():
     # Assume that pacman is there if a cicle is there
     circle = _find_svg_el(defs, 'circle')
     assert circle is not None
-    ghosts = [el for el in defs if el.attrib.get('id') == 'ghost']
-    assert 0 == len(ghosts)
+    ghost = _find_el_by_id(defs, 'ghost')
+    assert ghost is None
 
 
 def test_to_pacman_ghosts():
@@ -71,8 +77,8 @@ def test_to_pacman_ghosts():
     # Assume that pacman is there if a cicle is there
     circle = _find_svg_el(defs, 'circle')
     assert circle is not None
-    ghosts = [el for el in defs if el.attrib.get('id') == 'ghost']
-    assert 1 == len(ghosts)
+    ghost = _find_el_by_id(defs, 'ghost')
+    assert ghost is not None
 
 
 def test_to_glow():
@@ -83,20 +89,20 @@ def test_to_glow():
     assert root is not None
     defs = _find_svg_el(root, 'defs')
     assert defs is not None
-    filters = [el for el in defs]
-    assert 1 == len(filters)
+    filter = _find_el_by_id(defs, 'segno-glow')
+    assert filter is not None
 
 
 def test_to_blur():
     qr = segno.make_qr('Segno')
     out = io.BytesIO()
-    qr.to_glow(out)
+    qr.to_blur(out)
     root = _parse_xml(out)
     assert root is not None
     defs = _find_svg_el(root, 'defs')
     assert defs is not None
-    filters = [el for el in defs]
-    assert 1 == len(filters)
+    filter = _find_el_by_id(defs, 'segno-blur')
+    assert filter is not None
 
 
 if __name__ == '__main__':
