@@ -1,3 +1,12 @@
+
+Unmaintained
+============
+
+
+
+
+
+
 Segno Quark: Plugin for creating more advanced (or less usefull) QR Code SVG documents
 ======================================================================================
 
